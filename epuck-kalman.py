@@ -72,16 +72,6 @@ LOG_FILE = f"lab2_data_{NAV_MODE}.csv"
 
 # FUNCIONES
 
-
-def raw_to_distance(raw_value):
-    """Convierte valor crudo del sensor a distancia aproximada (m).
-    Relación inversa empírica: valor alto = obstáculo cerca."""
-    if raw_value < SENSOR_MIN_DETECT:
-        return SENSOR_MAX_RANGE
-    distance = (1.0 / (0.003 * raw_value + 0.3)) * 0.03
-    return max(0.005, min(distance, SENSOR_MAX_RANGE))
-
-
 class MovingAverageFilter:
     """Filtro de promedio móvil de ventana fija."""
     def __init__(self, window_size=FILTER_WINDOW_SIZE):
@@ -136,6 +126,16 @@ class KalmanFilter1D:
 
 
 # CONTROLADOR PRINCIPAL
+
+def raw_to_distance(raw_value):
+    """Convierte valor crudo del sensor a distancia aproximada (m).
+    Relación inversa empírica: valor alto = obstáculo cerca."""
+    
+    if raw_value < SENSOR_MIN_DETECT:
+        return SENSOR_MAX_RANGE
+    distance = (1.0 / (0.003 * raw_value + 0.3)) * 0.03
+    return max(0.005, min(distance, SENSOR_MAX_RANGE))
+
 
 def main():
     robot = Robot()
