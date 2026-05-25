@@ -167,29 +167,6 @@ La distancia de decisión (`decision_distance`) se selecciona según el modo act
 | Pasos comprometidos de giro | 8 |
 | Umbral de atasco | 0.0001 m/paso durante 20 pasos |
 
----
-
-## Gráficos de Señales
-
-### Escenario Simple — Distancia frontal (raw, filtrada, Kalman)
-
-![Señales frontales - Escenario Simple](./assets/simple_grafico.png)
-
-*Figura 1: Comparación de distancia frontal en los primeros 400 pasos del escenario simple. La señal cruda muestra oscilaciones de alta frecuencia; el promedio móvil y Kalman presentan trayectorias más suaves.*
-
-### Escenario Complejo — Distancia frontal (raw, filtrada, Kalman)
-
-![Señales frontales - Escenario Complejo](./assets/complejo_grafico.png)
-
-*Figura 2: Comparación de distancia frontal en el escenario complejo. La mayor densidad de obstáculos eleva el coeficiente de variación de la señal cruda respecto al escenario simple.*
-
-### Convergencia del Filtro de Kalman
-
-![Convergencia Kalman](./assets/kalman_convergencia.png)
-
-*Figura 3: Evolución de la ganancia K y la covarianza P. Ambos convergen a sus valores estacionarios en menos de 5 pasos de simulación.*
-
----
 
 ## Resultados por Escenario
 
